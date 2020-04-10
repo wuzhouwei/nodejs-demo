@@ -1,6 +1,8 @@
 # node-demo
 node实现增删改查上传下载
 
+git clone git@github.com:wuzhouwei/node-.git
+
 运行方式
 
 下载依赖 : cnpm i
