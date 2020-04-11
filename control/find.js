@@ -4,14 +4,9 @@ const User = require('../Models/user')
 
 exports.find = async ctx => {
     const token = ctx.headers.token
-    const uid = await User.findOne({
-            token
-        })
-        .then((res) => {
-            return res._id
-        }).catch(err => {
-            console.log(err);
-        })
+    const uid = await User.findOne({token})
+            .then((res) => {return res._id})
+            .catch(err => {console.log(err);})   
     const maxNum = await Add.find({
         uid
     }).countDocuments((err, num) => err ? console.log(err) : num) //查询总条数

@@ -5,7 +5,8 @@ const UserSchema = new Schema({
   password: String,
   articleNum: Number,
   commentNum: Number,
-  token:String
+  token:String,
+  md5:String
 }, {versionKey: false})
 
 

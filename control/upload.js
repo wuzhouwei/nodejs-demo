@@ -12,7 +12,7 @@ exports.upload = async (ctx,next)=>{
        
    })
     
-    ctx.body = {
+   return ctx.body = {
         code:200,
         msg:'上传成功',
        filename: name

@@ -10,8 +10,8 @@ const AddSchema = new Schema({
     hobby: String,
     lodPath:String,
     uid: {
-        type: ObjectId,
-        ref: 'users'
+        type: ObjectId, 
+        ref: 'users'  //关联表字段
     }
 }, {
     versionKey: false,

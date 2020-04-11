@@ -20,9 +20,11 @@ router.get('/',async ctx=>{
 })
 router.get('/banner',ceshiData.banner)
 
-router.post('/user/reg',user.reg)
+router.post('/user/reg',user.reg)  //注册
 
-router.post('/user/login',user.login)
+router.post('/user/login',user.login) //登录
+
+router.post('/user/loginOut',user.loginOut) //登录
 
 router.get('/list',user.keepLogin,list.list)
 
