@@ -54,3 +54,33 @@ app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3001, () => { console.log('启动成功3001');})
  
+{
+  // admin  admin
+  const { db } = require('./Schema/config')
+  const UserSchema = require('./Schema/user')
+  const User = db.model("users", UserSchema)
+
+  User
+    .find({username: "admin"})
+    .then(data => {
+      if(data.length === 0){
+        // 管理员不存在  创建
+        new User({
+          username: "admin",
+          password: "admin",
+          commentNum: 0,
+          articleNum: 0
+        })
+        .save()
+        .then(data => {
+          console.log("管理员用户名 -> admin,  密码 -> admin")
+        })
+        .catch(err => {
+          console.log("管理员账号检查失败")
+        })
+      }else{
+        // 在控制台输出
+        console.log(`管理员用户名 -> admin,  密码 -> admin`)
+      }
+    })
+}
